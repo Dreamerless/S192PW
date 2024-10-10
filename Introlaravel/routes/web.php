@@ -1,17 +1,32 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+USE App\Http\Controllers\controladorVistas;
+
+
+Route::get('/', [ControladorVistas::class, 'home'])->name('inicio');
+
+Route::get('/form', [ControladorVistas::class, 'formulario'])->name('formulario');
+
+Route::get('/clientes', [ControladorVistas::class, 'consulta'])->name('clientes');
+
+Route::view('componentes','componentes')->name('componentes');
+
+
+
+
+
 
 // Ruta de tipo GET
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-// Ruta de tipo vista
-Route::view('/', 'inicio')->name('rutainicio');
+/* // Ruta de tipo vista
+Route::view('/', 'inicio')->name('inicio');
 
-Route::view('/formulario', 'formulario')->name('rutaform');
+Route::view('/formulario', 'formulario')->name('formulario');
 
-Route::view('/clientes', 'clientes')->name('rutaclientes');
+Route::view('/clientes', 'clientes')->name('clientes');
 
+ */

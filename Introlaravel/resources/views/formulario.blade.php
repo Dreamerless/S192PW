@@ -1,34 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/js/app.js')
-    <title>Inicio</title>
-    <style>
-        body, html {
-          height: 100%;
-        }
-        .full-height{
-          height: 100vh;
-        }
-      </style>    
-</head>
+@extends('layouts.plantilla1')
 
-<body>
-  <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
-    <h1 class="display-1">¡Bienvenido Turista!</h1>
-    <p>Presiona el botón para iniciar...</p>
+@section('titulo','Registrarse')
+
+@section('contenido')
+    
 
 
-    {{-- Ruta cruda -> utilizando el nombre de la vista, SIN SEGURIDAD! --}}
-    {{-- <a href="/formulario" class="btn btn-danger"> Ir al registro </a> --}}
+{{-- inicia Tarjeta con formulario --}}
+    <div class="container mt-5 col-md-6">
+        <div class="card font-monospace">
+            <div class="card-header fs-5 text-center text-primary">
+                Registro de Clientes
+            </div>
+            <div class="card-body text-justify">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido: </label>
+                        <input type="text" class="form-control" id="apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo: </label>
+                        <input type="email" class="form-control" id="correo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono: </label>
+                        <input type="number" class="form-control" id="telefono">
+                    </div>
+                    <div class="card-footer text-muted">
+                        <div class="d-grid gap-2 mt-2 mb-1">
+                            <button type="submit" class="btn btn-success btn-sm">Guardar Cliente</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    {{-- Ruta por apodo SEGURA, EVITA INYECCIONES SQL <a href="{{route('rutaformulario')}}" class="btn btn-primary"> Ir al Registro </a> --}}
-    <a href="{{route('rutaform')}}" class="btn btn-danger"> Ir al registro </a>
-
-  </div>
-
-</body>
-</html>
+    @endsection

@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/js/app.js')
-    <title>Inicio</title>
-    <style>
-        body, html {
-          height: 100%;
-        }
-        .full-height{
-          height: 100vh;
-        }
-      </style>    
-</head>
+@extends('layouts.plantilla1')
 
-<body>
-  <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
-    <h1 class="display-1">¡Bienvenido Turista!</h1>
-    <p>Presiona el botón para iniciar...</p>
+@section('titulo','Cleintes registrados')
 
+@section('contenido')    
+    {{-- Inicia tarjetaCliente --}}
+    <div class="container mt-5 col-md-8">
 
-    {{-- Ruta cruda -> utilizando el nombre de la vista, SIN SEGURIDAD! --}}
-    {{-- <a href="/formulario" class="btn btn-danger"> Ir al registro </a> --}}
+        <div class="card text-justify font-monospace">
 
-    {{-- Ruta por apodo SEGURA, EVITA INYECCIONES SQL <a href="{{route('rutaformulario')}}" class="btn btn-primary"> Ir al Registro </a> --}}
-    <a href="{{route('rutaform')}}" class="btn btn-danger"> Ir al registro </a>
+            <div class="card-header fs-5 text-primary">
+                Ivan Isay Guerra
+            </div>
 
-  </div>
+            <div class="card-body">
+                <h5 class="fw-bold"> ivan.guerra@outlook.com</h5>
+                <h5 class="fw-medium"> 4424283836</h5>
+                <p class="card-text fw-lighter"> </p>
+            </div>
 
-</body>
-</html>
+            <div class="card-footer text-muted">
+                <button type="submit" class="btn btn-warning btn-sm"> Actualizan</button>
+                <button type="submit" class="btn btn-danger btn-sm"> Eliminar </button>
+            </div>
+
+        </div>
+
+    </div>
+    {{-- Finaliza tarjetaCliente --}}
+
+@endsection
