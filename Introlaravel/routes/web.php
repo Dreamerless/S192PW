@@ -12,7 +12,7 @@ Route::get('/clientes', [ControladorVistas::class, 'consulta'])->name('clientes'
 
 Route::view('componentes','componentes')->name('componentes');
 
-
+Route::post('/enviarCliente', [controladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
 
 
 
