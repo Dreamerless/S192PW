@@ -30,6 +30,6 @@
     </nav>
 
     @yield('contenido')
-
+4
 </body>
 </html>
