@@ -1,32 +1,37 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-USE App\Http\Controllers\controladorVistas;
+use App\Http\Controllers\controladorVistas;
+use App\Http\Controllers\ClienteController;
+
+/* Route::get('/', function () {
+    return view('welcome');
+}); */
+
+//Ruta de tipo VIEW
+/* Route::view('/','inicio')->name('rutainicio');
+Route::view('/form','formulario')->name('rutaform');
+Route::view('/clientes','clientes')->name('rutaclientes');
+Route::view('/componentes','componentes')->name('rutacomponentes'); */
+
+// Controlador vistas
+
+Route::get('/',[controladorVistas::class,'home'])->name('rutainicio');
+Route::get('/componentes',[controladorVistas::class,'component'])->name('rutacomponenetes');
+Route::post('/enviarCliente',[controladorVistas::class,'procesarCliente'])->name('rutaenviar');
+
+// Controlador Cliente
+
+Route::get('/cliente/create',[ClienteController::class,'create'])->name('rutaform');
+
+Route::post('/cliente', [ClienteController::class,'store'])->name('enviaCliente');
+
+Route::get('/cliente',[ClienteController::class,'index'])->name('rutaclientes');
+
+Route::put('/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('clientes.edit');
+
+Route::get('/cliente/{id}', [ClienteController::class, 'update'])->name('clientes.update');
+
+Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy'); 
 
 
-Route::get('/', [ControladorVistas::class, 'home'])->name('inicio');
-
-Route::get('/form', [ControladorVistas::class, 'formulario'])->name('formulario');
-
-Route::get('/clientes', [ControladorVistas::class, 'consulta'])->name('clientes');
-
-Route::view('componentes','componentes')->name('componentes');
-
-Route::post('/enviarCliente', [controladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
-
-
-
-
-// Ruta de tipo GET
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-/* // Ruta de tipo vista
-Route::view('/', 'inicio')->name('inicio');
-
-Route::view('/formulario', 'formulario')->name('formulario');
-
-Route::view('/clientes', 'clientes')->name('clientes');
-
- */

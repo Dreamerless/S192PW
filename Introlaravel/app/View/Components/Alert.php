@@ -14,7 +14,6 @@ class Alert extends Component
         $this->tipo=$tipo;
     }
 
-
     public function render(): View|Closure|string
     {
         return view('components.alert');

@@ -1,20 +1,20 @@
 @extends('layouts.plantilla1')
 
-@section('titulo','Registrarse')
+@section('titulo','Componenetes')
 
 @section('contenido')
-    
+
+<x-Card encabezado="Componenete" titulo="Dinámico" textoBoton="Enviar"> 
+    Soy un texto 1
+</x-Cardx>
+
+<x-Card encabezado="Componenete2" titulo="Dinámico2" textoBoton="Enviar2">
+    Soy un texto 2
+</x-Cardx>
 
 
-    <x-Card encabezado="Componente" titulo="Dinamico" textoBoton="Enviar"> 
-        Soy el texto de el primer componente 
-    </x-Card>
+<x-Alert tipo="alert-success">Verde</x-Alert>
+<x-Alert tipo="alert-primary">Azul</x-Alert>
+<x-Alert tipo="alert-danger">Rojo</x-Alert>
 
-    <x-Card encabezado="Componente2" titulo="Dinamico2" textoBoton="No Enviar"> 
-        Soy el texto de el Segundo componente
-    </x-Card>
-
-    <x-Alert tipo="success"> </x-Alert>
-    <x-Alert tipo="primary"> </x-Alert>
-    <x-Alert tipo="danger"> </x-Alert>
-    @endsection
+@endsection
