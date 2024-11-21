@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
 use App\Http\Controllers\ClienteController;
 
+
 /* Route::get('/', function () {
     return view('welcome');
 }); */
@@ -22,16 +23,17 @@ Route::post('/enviarCliente',[controladorVistas::class,'procesarCliente'])->name
 
 // Controlador Cliente
 
-Route::get('/cliente/create',[ClienteController::class,'create'])->name('rutaform');
+Route::get('/Registrar',[ClienteController::class,'create'])->name('rutaform');
 
-Route::post('/cliente', [ClienteController::class,'store'])->name('enviaCliente');
+Route::post('/Registro', [ClienteController::class,'store'])->name('enviaCliente');
 
-Route::get('/cliente',[ClienteController::class,'index'])->name('rutaclientes');
+Route::get('/clientes', [ClienteController::class, 'index'])->name('rutaclientes');
 
-Route::put('/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('clientes.edit');
 
-Route::get('/cliente/{id}', [ClienteController::class, 'update'])->name('clientes.update');
+Route::get('/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
 
-Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy'); 
+Route::put('/cliente/{id}/update', [ClienteController::class, 'update'])->name('cliente.update');
+
+Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
 
 

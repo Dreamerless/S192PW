@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use phpDocumentor\Reflection\Types\True_;
 
+
 class validadorClientes extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class validadorClientes extends FormRequest
         return [
             'txtnombre'=>'required|min:5|max:25',
             'txtapellido'=>'required|min:5|max:25',
-            'txtcorreo'=>'required|email:rfc,dns',
+            /* 'txtcorreo'=>'required|email:rfc,dns', */
             'txttelefono'=>'required|numeric'
         ];
     }
